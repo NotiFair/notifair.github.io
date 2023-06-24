@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/rocket2.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>NotifAiR</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="assets/img/rocket1.webp" alt="">
+        <div class="content">
+            <header>Cookies Consent</header>
+            <p>This website use cookies to ensure you get the best experience on our website.</p>
+            <div class="buttons">
+                <button class="item">I understand</button>
+                <a href="#" class="item">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const cookieBox = document.querySelector(".wrapper"),
+            acceptBtn = cookieBox.querySelector("button");
+        acceptBtn.onclick = () => {
+            //setting cookie for 1 month, after one month it'll be expired automatically
+            document.cookie = "CookieBy=NotifAiR; max-age=" + 60 * 60 * 24 * 30;
+            if (document.cookie) { //if cookie is set
+                cookieBox.classList.add("hide"); //hide cookie box
+            } else { //if cookie not set then alert an error
+                alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+            }
+        }
+        let checkCookie = document.cookie.indexOf("CookieBy=NotifAiR"); //checking our cookie
+        //if cookie is set then hide the cookie box else show it
+        checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+    </script>
+
+    <!-- <header class="header" id="header">
+         <nav class="nav container">
+            <a href="#" class="nav__logo">
+                 <span>NotifAiR</span>
+            </a> -->
+
+    <!-- <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li class="nav__item">
+                     <a href="#home" class="nav__link active-link">Home</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#about" class="nav__link">About</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#services" class="nav__link">Services</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#faqs" class="nav__link">FAQ</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#contact" class="nav__link">Contact</a>
+                  </li>
+                  
+               </ul>
+
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </div>
+
+         </nav>
+      </header> -->
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <i class=""></i> NotifAiR
+                </a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__toggle-menu"></i>
+                    <i class="ri-close-line nav__toggle-close"></i>
+                </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li>
+                        <a href="home.html" class="nav__link">Blog</a>
+                    </li>
+
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">
+                            Discover <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <div class="dropdown__container">
+                            <div class="dropdown__content">
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-flashlight-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-heart-3-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-book-mark-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-file-paper-2-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--=============== DROPDOWN 2 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">
+                            Resources <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <div class="dropdown__container">
+                            <div class="dropdown__content">
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-code-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-pen-nib-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-apps-2-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav__link">Pricing</a>
+                    </li>
+
+                    <!--=============== DROPDOWN 3 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">
+                            Company <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <div class="dropdown__container">
+                            <div class="dropdown__content">
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-community-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">feature</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">Contact us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown__group">
+                                    <div class="dropdown__icon">
+                                        <i class="ri-shield-line"></i>
+                                    </div>
+
+                                    <span class="dropdown__title">service</span>
+
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="#" class="dropdown__link">Cookie settings</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown__link">Privacy Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content">
+                    <div class="home__data">
+                        <h3 class="home__subtitle">
+                            I'm,
+                        </h3>
+
+                        <h1 class="home__title">NotifAiR</h1>
+
+                        <h3 class="home__education">Fair Notifications on Air</h3>
+
+                        <p class="home__description">
+                            Discover events happening nearby with a location-
+                            based events app that sends push notifications to your
+                            device.
+                        </p>
+
+                        <a href="#contact" class="button">Sign Up</a>
+                    </div>
+
+                    <div class="home__social">
+                        <a href="https://github.com/" target="_blank" class="home__social-link">
+                            <i class="ri-github-fill"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
+                            <i class="ri-linkedin-box-line"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home__image">
+                    <img src="assets/img/rocket.png" alt="" class="home__img">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <div class="skills__container container grid">
+                <img src="assets/img/rocket1.webp" alt="" class="about__img">
+
+                <div class="about__data">
+                    <h3 class="section__subtitle">
+                        About <span>Me</span>
+                    </h3>
+
+                    <h2 class="section__title about__title">
+                        Why choose us
+                    </h2>
+
+
+                    <p class="about__description">
+                        By using geolocation technology, an events app can provide
+                        highly targeted notifications to users based on their location.
+                    </p>
+
+                    <div class="about__details">
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Geolocation-based events app sends notifications.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Geolocation-based events app sends notifications.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Geolocation-based events app sends notifications.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Geolocation-based events app sends notifications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps section container">
+            <div class="steps__bg">
+                <h2 class="section__title-center steps__title">
+                    Features we offer
+                </h2>
+
+                <div class="steps__container grid">
+                    <div class="steps__card">
+                        <div class="steps__card-number">OMNICHANNEL
+                            APPROACH</div>
+
+                        <p class="steps__card-description">
+                            Geolocation-based events app
+                            sends notifications. </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">OMNICHANNEL
+                            APPROACH</div>
+
+                        <p class="steps__card-description">
+                            Geolocation-based events app
+                            sends notifications. </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">OMNICHANNEL
+                            APPROACH</div>
+
+                        <p class="steps__card-description">
+                            Geolocation-based events app
+                            sends notifications. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="skills section">
+            <div class="skills__container container grid">
+                <div class="skills__data">
+                    <h3 class="section__subtitle">
+                        Watch the <span>happenings</span>
+                    </h3>
+
+                    <h2 class="section__title">
+                        At any time
+                    </h2>
+
+                    <p class="skills__description">
+                        With our app you can view the route of your nearest
+                        event, from the pin to the place where you are. Look for
+                        the app now!
+                    </p>
+
+                    <a href="#projects" class="button">Soon on App Store</a>
+                    <a href="#projects" class="button">Soon on Google App</a>
+                </div>
+
+                <div class="skills__content">
+                    <ol class="skills__group">
+                        <li class="skills__item">Add Reminders</li>
+                        <li class="skills__item">Add Reminders</li>
+                        <li class="skills__item">Add Reminders</li>
+                        <li class="skills__item">Add Reminders</li>
+                    </ol>
+
+                    <ol class="skills__group" start="5">
+                        <li class="skills__item">Add Reminders</li>
+                        <li class="skills__item">Add Reminders</li>
+                        <li class="skills__item">Add Reminders</li>
+                        <li class="skills__item">Add Reminders</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="services section" id="services">
+            <h3 class="section__subtitle">
+                We <span>Provide</span>
+            </h3>
+
+            <h2 class="section__title">
+                Services
+            </h2>
+
+            <div class="services__container container grid">
+                <article class="services__card">
+                    <i class="ri-layout-3-line services__icon"></i>
+
+                    <h2 class="services__title">Service 1</h2>
+
+                    <p class="services__description">
+                        Learn how to build effective cross-
+                        channel communications and
+                        drive conversions.
+                    </p>
+                </article>
+
+                <article class="services__card">
+                    <i class="ri-pantone-line services__icon"></i>
+
+                    <h2 class="services__title">Service 2</h2>
+
+                    <p class="services__description">
+                        Learn how to build effective cross-
+                        channel communications and
+                        drive conversions.
+                    </p>
+                </article>
+
+                <article class="services__card">
+                    <i class="ri-pen-nib-line services__icon"></i>
+
+                    <h2 class="services__title">Service 3</h2>
+
+                    <p class="services__description">
+                        Learn how to build effective cross-
+                        channel communications and
+                        drive conversions.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="questions section" id="faqs">
+
+            <div class="contact__container container grid">
+                <h3 class="section__subtitle">
+                    Some <span>Info</span>
+                </h3>
+
+                <h2 class="section__title">
+                    FAQ'S
+                </h2>
+                <div class="questions__group">
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Why only NotifAiR?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Learn how to build effective cross-
+                                channel communications and
+                                drive conversions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Why only NotifAiR?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Learn how to build effective cross-
+                                channel communications and
+                                drive conversions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Why only NotifAiR?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Learn how to build effective cross-
+                                channel communications and
+                                drive conversions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="questions__group">
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Why only NotifAiR?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Learn how to build effective cross-
+                                channel communications and
+                                drive conversions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Why only NotifAiR?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Learn how to build effective cross-
+                                channel communications and
+                                drive conversions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Why only NotifAiR?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Learn how to build effective cross-
+                                channel communications and
+                                drive conversions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="contact section" id="contact">
+            <h3 class="section__subtitle">
+                Get In <span>Touch</span>
+            </h3>
+
+            <h2 class="section__title">
+                Sign Up
+            </h2>
+
+            <div class="contact__container container grid">
+                <form action="" class="contact__form" id="contact-form">
+                    <div class="contact__group">
+                        <input type="text" name="user_name" required placeholder="Enter your name"
+                            class="contact__input">
+                        <input type="email" name="user_email" required placeholder="Enter your email"
+                            class="contact__input">
+                    </div>
+
+                    <textarea name="user_project" required placeholder="Enter your message"
+                        class="contact__input"></textarea>
+
+                    <p class="contact__message" id="contact-message"></p>
+
+                    <button type="submit" class="button contact__button">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <div>
+                <h1 class="footer__title">
+                    <span>NotifAiR</span>
+                </h1>
+
+                <h2 class="footer__education">
+                    Fair Notifications on Air
+                </h2>
+            </div>
+
+            <div class="footer__social">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                    <i class="ri-facebook-circle-line"></i>
+                </a>
+
+                <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                    <i class="ri-instagram-line"></i>
+                </a>
+
+                <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                    <i class="ri-twitter-line"></i>
+                </a>
+            </div>
+
+            <span class="footer__copy">
+                Terms & conditions apply
+            </span>
+        </div>
+    </footer>
+
+
+
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
